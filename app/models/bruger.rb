@@ -1,4 +1,3 @@
 class Bruger < ActiveRecord::Base
-  has_many :begivenhed
-  has_many :onskes
+  has_many :begivenheds
 end
