@@ -1,8 +1,9 @@
-<h1>Listing brugers</h1>
+<h1>Venner</h1>
 
 <table>
   <tr>
     <th>Navn</th>
+    <th>efternavn</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @brugers.each do |bruger| %>
   <tr>
     <td><%= bruger.navn %></td>
+    <td><%= bruger.efternavn %></td>
     <td><%= link_to 'Show', bruger %></td>
     <td><%= link_to 'Edit', edit_bruger_path(bruger) %></td>
     <td><%= link_to 'Destroy', bruger, confirm: 'Are you sure?', method: :delete %></td>
@@ -20,4 +22,4 @@
 
 <br />
 
-<%= link_to 'New Bruger', new_bruger_path %>
+<%= link_to 'Begivenheder', new_begivenhed_path %>
