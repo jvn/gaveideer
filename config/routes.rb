@@ -1,4 +1,10 @@
 Gaveideer::Application.routes.draw do
+  resources :onskes
+
+  resources :begivenheds
+
+  resources :brugers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

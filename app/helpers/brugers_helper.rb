@@ -1,0 +1,2 @@
+module BrugersHelper
+end

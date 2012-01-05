@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  onske: MyString
+  pris: 1
+  hjemmeside: MyString
+  billede: MyString
+
+two:
+  onske: MyString
+  pris: 1
+  hjemmeside: MyString
+  billede: MyString

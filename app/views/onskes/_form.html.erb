@@ -1,0 +1,33 @@
+<%= form_for(@onske) do |f| %>
+  <% if @onske.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@onske.errors.count, "error") %> prohibited this onske from being saved:</h2>
+
+      <ul>
+      <% @onske.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :onske %><br />
+    <%= f.text_field :onske %>
+  </div>
+  <div class="field">
+    <%= f.label :pris %><br />
+    <%= f.number_field :pris %>
+  </div>
+  <div class="field">
+    <%= f.label :hjemmeside %><br />
+    <%= f.text_field :hjemmeside %>
+  </div>
+  <div class="field">
+    <%= f.label :billede %><br />
+    <%= f.text_field :billede %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

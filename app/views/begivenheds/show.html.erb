@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Begivenhed:</b>
+  <%= @begivenhed.begivenhed %>
+</p>
+
+<p>
+  <b>Dato:</b>
+  <%= @begivenhed.dato %>
+</p>
+
+
+<%= link_to 'Edit', edit_begivenhed_path(@begivenhed) %> |
+<%= link_to 'Back', begivenheds_path %>

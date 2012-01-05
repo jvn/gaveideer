@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Navn:</b>
+  <%= @bruger.navn %>
+</p>
+
+
+<%= link_to 'Edit', edit_bruger_path(@bruger) %> |
+<%= link_to 'Back', brugers_path %>

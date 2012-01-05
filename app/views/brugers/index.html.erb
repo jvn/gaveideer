@@ -1,0 +1,23 @@
+<h1>Listing brugers</h1>
+
+<table>
+  <tr>
+    <th>Navn</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @brugers.each do |bruger| %>
+  <tr>
+    <td><%= bruger.navn %></td>
+    <td><%= link_to 'Show', bruger %></td>
+    <td><%= link_to 'Edit', edit_bruger_path(bruger) %></td>
+    <td><%= link_to 'Destroy', bruger, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bruger', new_bruger_path %>

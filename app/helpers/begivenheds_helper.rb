@@ -1,0 +1,2 @@
+module BegivenhedsHelper
+end

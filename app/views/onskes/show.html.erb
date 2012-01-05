@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Onske:</b>
+  <%= @onske.onske %>
+</p>
+
+<p>
+  <b>Pris:</b>
+  <%= @onske.pris %>
+</p>
+
+<p>
+  <b>Hjemmeside:</b>
+  <%= @onske.hjemmeside %>
+</p>
+
+<p>
+  <b>Billede:</b>
+  <%= @onske.billede %>
+</p>
+
+
+<%= link_to 'Edit', edit_onske_path(@onske) %> |
+<%= link_to 'Back', onskes_path %>

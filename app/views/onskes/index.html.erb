@@ -1,0 +1,29 @@
+<h1>Listing onskes</h1>
+
+<table>
+  <tr>
+    <th>Onske</th>
+    <th>Pris</th>
+    <th>Hjemmeside</th>
+    <th>Billede</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @onskes.each do |onske| %>
+  <tr>
+    <td><%= onske.onske %></td>
+    <td><%= onske.pris %></td>
+    <td><%= onske.hjemmeside %></td>
+    <td><%= onske.billede %></td>
+    <td><%= link_to 'Show', onske %></td>
+    <td><%= link_to 'Edit', edit_onske_path(onske) %></td>
+    <td><%= link_to 'Destroy', onske, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Onske', new_onske_path %>
