@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20120105174645) do
   create_table "begivenheds", :force => true do |t|
     t.string   "begivenhed"
     t.string   "dato"
+    t.integer  "bruger_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20120105174645) do
     t.integer  "pris"
     t.string   "hjemmeside"
     t.string   "billede"
+    t.integer  "begivenhed_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

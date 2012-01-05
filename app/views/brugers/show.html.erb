@@ -1,9 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Navn:</b>
-  <%= @bruger.navn %>
-</p>
+<table>
+  <tr>
+    <th>Mine begivenheder</th>
+  </tr>
+
+<% @begivenheds.each do |begivenhed| %>
+  <tr>
+    <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+  </tr>
+<% end %>
+</table>
 
 
 <%= link_to 'Edit', edit_bruger_path(@bruger) %> |

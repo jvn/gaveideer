@@ -5,6 +5,7 @@ class CreateOnskes < ActiveRecord::Migration
       t.integer :pris
       t.string :hjemmeside
       t.string :billede
+      t.integer :begivenhed_id
 
       t.timestamps
     end
