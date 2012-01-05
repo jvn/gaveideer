@@ -1,4 +1,6 @@
 Gaveideer::Application.routes.draw do
+  root :to => "pages#forside"
+
   resources :onskes
 
   resources :begivenheds

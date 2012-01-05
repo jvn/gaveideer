@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'forgery'
+
+@bruger1 = Bruger.create(:navn => Forgery(:name).first_name)
+@bruger2 = Bruger.create(:navn => Forgery(:name).first_name)
+@bruger3 = Bruger.create(:navn => Forgery(:name).first_name)
+
+@begivenhed1 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger1)
+@begivenhed2 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger1)
+@begivenhed3 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger1)
+@begivenhed4 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger2)
+@begivenhed5 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger2)
+@begivenhed6 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger3)
+@begivenhed7 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger3)

@@ -1,0 +1,9 @@
+<center>
+
+    <b>Log in som en af følgende:</b> <br/>
+
+    <% @brugers.each do |bruger| %>
+        <%= link_to bruger.navn, bruger %><br/>
+    <% end %>
+
+</center>
