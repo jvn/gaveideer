@@ -1,25 +1,17 @@
-<h1>Listing begivenheds</h1>
+<h1>Min sexy profil</h1>
 
 <table>
   <tr>
-    <th>Begivenhed</th>
-    <th>Dato</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Mine begivenheder</th>
   </tr>
 
 <% @begivenheds.each do |begivenhed| %>
   <tr>
-    <td><%= begivenhed.begivenhed %></td>
-    <td><%= begivenhed.dato %></td>
-    <td><%= link_to 'Show', begivenhed %></td>
-    <td><%= link_to 'Edit', edit_begivenhed_path(begivenhed) %></td>
-    <td><%= link_to 'Destroy', begivenhed, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Begivenhed', new_begivenhed_path %>
+<%= link_to 'Ny begivenhed', new_begivenhed_path %>
