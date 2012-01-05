@@ -6,8 +6,6 @@ gem 'rails', '3.1.0'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'factory_girl_rails'
-gem 'forgery', '0.5.0'
 
 
 # Gems used only for assets and not required

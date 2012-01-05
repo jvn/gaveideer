@@ -3,13 +3,6 @@
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectRootManager" version="2" project-jdk-name="ruby-1.9.2-p290" project-jdk-type="RUBY_SDK" />
-=======
-  <component name="ProjectResources">
-    <default-html-doctype>http://www.w3.org/1999/xhtml</default-html-doctype>
-  </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="ruby-1.8.7-p352" project-jdk-type="RUBY_SDK" />
->>>>>>> d0cf2977d15edc1e2150461087a9b6b1b2090134
 </project>
 
