@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20120105174645) do
 
   create_table "brugers", :force => true do |t|
     t.string   "navn"
+    t.string   "efternavn"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
