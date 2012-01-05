@@ -13,8 +13,8 @@ class BrugersController < ApplicationController
   # GET /brugers/1
   # GET /brugers/1.json
   def show
-    @begivenheds = Begivenhed.all
     @bruger = Bruger.find(params[:id])
+    @begivenheds = @bruger.begivenheds
 
     respond_to do |format|
       format.html # show.html.erb

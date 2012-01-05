@@ -1,17 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div title="Half and half" class="row show-grid">
+    <div class="span8">
+        <table>
+          <tr>
+            <th>Mine begivenheder</th>
+          </tr>
 
-<table>
-  <tr>
-    <th>Mine begivenheder</th>
-  </tr>
-
-<% @begivenheds.each do |begivenhed| %>
-  <tr>
-    <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
-  </tr>
-<% end %>
-</table>
+        <% @begivenheds.each do |begivenhed| %>
+          <tr>
+            <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+          </tr>
+        <% end %>
+        </table>
 
 
-<%= link_to 'Edit', edit_bruger_path(@bruger) %> |
-<%= link_to 'Back', brugers_path %>
+    </div>
+
+    <div class="span8">
+    <%= link_to 'venner', brugers_path %>
+    </div>
+</div>
+
