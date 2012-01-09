@@ -17,6 +17,23 @@
     </div>
 
     <div class="span8">
+      <table>
+          <tr>
+            <th>Bruger</th>
+            <th>Begivenhed</th>
+          </tr>
+
+        <% @all_begivenheds.each do |begivenhed| %>
+            <% @bruger = Bruger.find(begivenhed.bruger_id) %>
+
+            <% if begivenhed.bruger_id != @bruger_id  %>
+               <tr>
+                <td><%= @bruger.navn %> </td>
+                <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+               </tr>
+           <% end %>
+        <% end %>
+        </table>
     <%= link_to 'venner', brugers_path %>
     </div>
 </div>
