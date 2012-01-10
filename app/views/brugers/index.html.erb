@@ -1,22 +1,21 @@
 <h1>Venner</h1>
 
 <table>
-  <tr>
-    <th>Navn</th>
-    <th>efternavn</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <tr>
+        <th>Navn</th>
+        <th>efternavn</th>
+    </tr>
 
-<% @brugers.each do |bruger| %>
-  <tr>
-    <td><%= bruger.navn %></td>
-    <td><%= bruger.efternavn %></td>
-  </tr>
-<% end %>
+    <% @brugers.each do |bruger| %>
+        <% if bruger.id.to_i != @bruger_id.to_i %>
+            <tr>
+                <td><%= link_to bruger.navn, begivenheds_path(:id => @bruger_id, :ven_id => bruger.id) %></td>
+                <td><%= bruger.efternavn %></td>
+            </tr>
+        <% end %>
+    <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Begivenheder', new_begivenhed_path %>
+<%= link_to 'Begivenheder', new_begivenhed_path  %>

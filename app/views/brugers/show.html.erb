@@ -24,17 +24,17 @@
           </tr>
 
         <% @all_begivenheds.each do |begivenhed| %>
-            <% @bruger = Bruger.find(begivenhed.bruger_id) %>
+            <% @anden_bruger = Bruger.find(begivenhed.bruger_id) %>
 
             <% if begivenhed.bruger_id != @bruger_id  %>
                <tr>
-                <td><%= @bruger.navn %> </td>
+                <td><%= @anden_bruger.navn %> </td>
                 <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
                </tr>
            <% end %>
         <% end %>
         </table>
-    <%= link_to 'venner', brugers_path %>
+    <%= link_to 'venner', brugers_path(:id => @bruger.id)  %>
     </div>
 </div>
 

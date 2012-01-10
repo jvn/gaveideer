@@ -1,13 +1,13 @@
-<h1>Min sexy profil</h1>
+<h1>Din vens begivenheder</h1>
 
 <table>
   <tr>
-    <th>Mine begivenheder</th>
+    <th> <%= @ven.navn + 's begivenheder' %></th>
   </tr>
 
-<% @begivenheds.each do |begivenhed| %>
+<% @ven_begivenheds.each do |begivenhed| %>
   <tr>
-    <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+    <td><%= link_to begivenhed.begivenhed, onskes_path(:id => @bruger, :ven_id => @ven_id, :beg_id =>begivenhed.id) %></td>
   </tr>
 <% end %>
 </table>

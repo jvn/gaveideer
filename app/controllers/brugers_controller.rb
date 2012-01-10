@@ -2,6 +2,7 @@ class BrugersController < ApplicationController
   # GET /brugers
   # GET /brugers.json
   def index
+    @bruger_id = params[:id]
     @brugers = Bruger.all
 
     respond_to do |format|

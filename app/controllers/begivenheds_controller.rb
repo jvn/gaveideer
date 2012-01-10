@@ -3,6 +3,10 @@ class BegivenhedsController < ApplicationController
   # GET /begivenheds.json
   def index
     @begivenheds = Begivenhed.all
+    @bruger = params[:id]
+    @ven_id = params[:ven_id]
+    @ven = Bruger.find_by_id(@ven_id)
+    @ven_begivenheds = @ven.begivenheds
 
     respond_to do |format|
       format.html # index.html.erb
