@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     session["user"] = a
   end
 
+  def current
+    session["ekstra"] = b
+  end
+
   def remove_user
     session["user"] = nil
   end

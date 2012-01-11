@@ -2,7 +2,7 @@ class BrugersController < ApplicationController
   # GET /brugers
   # GET /brugers.json
   def index
-    @bruger_id = current_user
+    @bruger_id = current_user.id
     @bruger = Bruger.find_by_id(@bruger_id)
     @brugers = Bruger.all
 
@@ -21,7 +21,7 @@ class BrugersController < ApplicationController
     logger.info ("aktuel bruger" + params[:id])
     set_user(params[:id])
     @bruger = Bruger.find(params[:id])
-    @bruger_id = current_user
+    @bruger_id = current_user.id
     @all_begivenheds = Begivenhed.all
     @begivenheds = @bruger.begivenheds
 
