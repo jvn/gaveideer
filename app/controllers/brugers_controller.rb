@@ -3,6 +3,7 @@ class BrugersController < ApplicationController
   # GET /brugers.json
   def index
     @bruger_id = current_user
+    @bruger = Bruger.find_by_id(@bruger_id)
     @brugers = Bruger.all
 
     #@brugerSaaJoelKanSeDetVirker = current_user
