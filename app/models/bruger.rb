@@ -17,9 +17,9 @@ class Bruger < ActiveRecord::Base
   end
 
   def self.authenticate(email, password)
-    user = find_by_email(email)
-    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
-      user
+    bruger = find_by_email(email)
+    if bruger && bruger.password_hash == BCrypt::Engine.hash_secret(password, bruger.password_salt)
+      bruger
     else
       nil
     end

@@ -8,10 +8,19 @@
     </head>
     <body style="padding-top: 40px;">
 
+        <div id= "user_nav">
+            <% if current_user  %>
+            logged in as <%= current_user.email %>
+        <%= link_to "log_out", log_out_path  %>
+
+            <% else  %>
+        <%= link_to "log in", loGinz_path %>
+        <% end  %>
+        </div>
+
         <% flash.each do |name, msg| %>
             <%= content_tag :div, msg, :id => "flash#{name}" %>
         <% end %>
-
 
         <div style="z-index: 5;" class="topbar-wrapper">
             <div data-dropdown="dropdown" class="topbar">
