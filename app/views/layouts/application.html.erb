@@ -14,10 +14,14 @@
                 <div class="container">
                   <h3><a href="#">Gaveideer</a></h3>
                   <ul class="nav">
-                    <li class="active"><a href="#">Profil</a></li>
-                    <li><a href="#">Dine begivenheder</a></li>
-                    <li><a href="#">Venner</a></li>
-                    <li><a href="#">Ny begivenhed</a></li>
+                    <li class="active"><%= link_to "profil", @user %></li>
+
+
+                    <!-- <li><%#= puts "12" #link_to 'Dine begivenheder', begivenheds_path(:id => @bruger_id, :ven_id => @bruger_id) %></li>
+                              <li><#%= puts "123" #link_to 'Venner', bruger_path(:id => @bruger_id) %></li>
+                              <li><#   %= puts "12" #link_to "ny begivenhed", new_begivenhed_path(:id => @bruger_id) %></li>
+                      -->
+                    <li><%= link_to "log ud", :controller => "pages", :action => "logud" %></li>
                   </ul>
                   <ul class="nav secondary-nav">
                     <form action="" class="pull-left">
