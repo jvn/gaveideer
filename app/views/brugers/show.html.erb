@@ -12,8 +12,7 @@
           </tr>
         <% end %>
         </table>
-
-
+        <%= link_to 'ny begivenhed', new_begivenhed_path(:id => @bruger.id) %>
     </div>
 
     <div class="span8">
@@ -29,7 +28,9 @@
             <% if begivenhed.bruger_id != @bruger_id  %>
                <tr>
                 <td><%= @anden_bruger.navn %> </td>
-                <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+                <td><%= link_to begivenhed.begivenhed, onskes_path(:id => @bruger.id,
+                                                                   :ven_id => begivenhed.bruger_id,
+                                                                   :beg_id => begivenhed.id) %></td>
                </tr>
            <% end %>
         <% end %>

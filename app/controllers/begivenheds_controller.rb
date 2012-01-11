@@ -28,6 +28,8 @@ class BegivenhedsController < ApplicationController
   # GET /begivenheds/new
   # GET /begivenheds/new.json
   def new
+    @bruger_id = params[:id]
+    @bruger = Bruger.find_by_id(@bruger_id)
     @begivenhed = Begivenhed.new
 
     respond_to do |format|
@@ -45,7 +47,6 @@ class BegivenhedsController < ApplicationController
   # POST /begivenheds.json
   def create
     @begivenhed = Begivenhed.new(params[:begivenhed])
-
     respond_to do |format|
       if @begivenhed.save
         format.html { redirect_to @begivenhed, notice: 'Begivenhed was successfully created.' }

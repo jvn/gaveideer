@@ -1,5 +1,34 @@
 <h1>New begivenhed</h1>
+<% @begivenhed.bruger = @bruger %>
+<%= form_for(@begivenhed) do |f| %>
+  <% if @begivenhed.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@begivenhed.errors.count, "error") %> prohibited this begivenhed from being saved:</h2>
 
-<%= render 'form' %>
+      <ul>
+      <% @begivenhed.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :bruger_id %><br />
+    <%= f.number_field :bruger_id %>
+  </div>
+  <div class="field">
+    <%= f.label :begivenhed %><br />
+    <%= f.text_field :begivenhed %>
+  </div>
+  <div class="field">
+    <%= f.label :dato %><br />
+    <%= f.text_field :dato %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Back', begivenheds_path %>

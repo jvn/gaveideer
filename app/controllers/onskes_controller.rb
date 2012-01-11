@@ -3,6 +3,10 @@ class OnskesController < ApplicationController
   # GET /onskes.json
   def index
     @onskes = Onske.all
+    @begivenhed_id = params[:beg_id]
+    @begivenhed = Begivenhed.find_by_id(@begivenhed_id)
+    @onsker = @begivenhed.onskes
+
 
     respond_to do |format|
       format.html # index.html.erb
