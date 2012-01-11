@@ -2,6 +2,7 @@ class OnskesController < ApplicationController
   # GET /onskes
   # GET /onskes.json
   def index
+    @bruger = Bruger.find_by_id(current_user)
     @onskes = Onske.all
     @begivenhed_id = params[:beg_id]
     @begivenhed = Begivenhed.find_by_id(@begivenhed_id)
@@ -17,6 +18,7 @@ class OnskesController < ApplicationController
   # GET /onskes/1
   # GET /onskes/1.json
   def show
+    @bruger = Bruger.find_by_id(current_user)
     @onske = Onske.find(params[:id])
 
     respond_to do |format|
@@ -38,6 +40,7 @@ class OnskesController < ApplicationController
 
   # GET /onskes/1/edit
   def edit
+    @bruger = Bruger.find_by_id(current_user)
     @onske = Onske.find(params[:id])
   end
 

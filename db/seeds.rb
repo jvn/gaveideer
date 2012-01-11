@@ -7,12 +7,18 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'forgery'
 
-@bruger1 = Bruger.create(:navn => Forgery(:name).first_name,
-                         :efternavn => Forgery(:name).last_name)
-@bruger2 = Bruger.create(:navn => Forgery(:name).first_name,
-                         :efternavn => Forgery(:name).last_name)
-@bruger3 = Bruger.create(:navn => Forgery(:name).first_name,
-                         :efternavn => Forgery(:name).last_name)
+@bruger1 = Bruger.create!(:navn => Forgery(:name).first_name,
+                         :efternavn => Forgery(:name).last_name,
+                         :password => 'hej',
+                         :email => 'hej')
+@bruger2 = Bruger.create!(:navn => Forgery(:name).first_name,
+                         :efternavn => Forgery(:name).last_name,
+                         :password => 'hej',
+                         :email => 'hej2')
+@bruger3 = Bruger.create!(:navn => Forgery(:name).first_name,
+                         :efternavn => Forgery(:name).last_name,
+                         :password => 'hej',
+                         :email => 'hej3')
 
 @begivenhed1 = Begivenhed.create(:begivenhed => 'min foedselsdag',
                                  :dato => 'd.01/01/2012',

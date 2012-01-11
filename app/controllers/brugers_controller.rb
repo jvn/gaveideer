@@ -3,6 +3,7 @@ class BrugersController < ApplicationController
   # GET /brugers.json
   def index
     @bruger_id = current_user
+    @bruger = Bruger.find_by_id(@bruger_id)
     @brugers = Bruger.all
 
     #@brugerSaaJoelKanSeDetVirker = current_user
@@ -23,6 +24,7 @@ class BrugersController < ApplicationController
     @bruger_id = current_user
     @all_begivenheds = Begivenhed.all
     @begivenheds = @bruger.begivenheds
+
 
     respond_to do |format|
       format.html # show.html.erb

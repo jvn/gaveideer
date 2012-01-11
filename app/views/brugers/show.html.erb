@@ -8,7 +8,7 @@
 
         <% @begivenheds.each do |begivenhed| %>
           <tr>
-            <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+            <td><%= link_to begivenhed.begivenhed, onskes_path(:beg_id => begivenhed.id, :ven_id => begivenhed.bruger_id) %></td>
           </tr>
         <% end %>
         </table>
@@ -23,21 +23,17 @@
           </tr>
 
           <% @all_begivenheds.each do |begivenhed| %>
-              <% if begivenhed.bruger_id != @bruger_id  %>
+              <% @ven = Bruger.find_by_id(begivenhed.bruger_id) %>
+              <% if begivenhed.bruger_id.to_i != @bruger_id.to_i  %>
                     <tr>
-                     <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+                        <td><%= @ven.navn %></td>
+                        <td><%= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
+                                                                           :beg_id => begivenhed.id) %></td>
                     </tr>
               <% end %>
-
-
           <% end %>
-            <%# if begivenhed.bruger_id != @bruger_id  %>
-               <tr>
-                <td><%#= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
-                                                                   :beg_id => begivenhed.id) %></td>
-               </tr>
         </table>
-    <!-- <%# link_to 'venner', brugers_path(:id => @bruger.id)  %> -->
+    <%= link_to 'venner', brugers_path(:id => @bruger.id)  %>
     </div>
    </div>
 
