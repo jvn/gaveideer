@@ -29,20 +29,15 @@
                     </tr>
               <% end %>
 
-<<<<<<< HEAD
+
           <% end %>
-=======
-            <% if begivenhed.bruger_id != @bruger_id  %>
+            <%# if begivenhed.bruger_id != @bruger_id  %>
                <tr>
-                <td><%= @anden_bruger.navn %> </td>
-                <td><%= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
+                <td><%#= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
                                                                    :beg_id => begivenhed.id) %></td>
                </tr>
-           <% end %>
-        <% end %>
->>>>>>> 3af9e383550f3a8eab04a07300e149b1971fc3d7
         </table>
     <!-- <%# link_to 'venner', brugers_path(:id => @bruger.id)  %> -->
     </div>
-</div>
+   </div>
 
