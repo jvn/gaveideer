@@ -2,8 +2,11 @@ class BrugersController < ApplicationController
   # GET /brugers
   # GET /brugers.json
   def index
-    @bruger_id = params[:id]
+    @bruger_id = current_user
     @brugers = Bruger.all
+
+    #@brugerSaaJoelKanSeDetVirker = current_user
+    logger.info("nuv. bruger: " + current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,8 +18,9 @@ class BrugersController < ApplicationController
   # GET /brugers/1.json
   def show
     logger.info ("aktuel bruger" + params[:id])
+    set_user(params[:id])
     @bruger = Bruger.find(params[:id])
-    @bruger_id = @bruger.id
+    @bruger_id = current_user
     @all_begivenheds = Begivenhed.all
     @begivenheds = @bruger.begivenheds
 

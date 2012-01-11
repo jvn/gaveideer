@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gaveideer</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <head>
+      <title>Gaveideer</title>
+      <%= stylesheet_link_tag    "application" %>
+      <%= javascript_include_tag "application" %>
+      <%= csrf_meta_tags %>
+    </head>
+    <body style="padding-top: 40px;">
 
-<%= yield %>
+        <div style="z-index: 5;" class="topbar-wrapper">
+            <div data-dropdown="dropdown" class="topbar">
+              <div class="topbar-inner">
+                <div class="container">
+                  <h3><a href="#">Gaveideer</a></h3>
+                  <ul class="nav">
+                    <li class="active"><%= link_to "profil", @user %></li>
 
-</body>
+
+                    <!-- <li><%#= link_to 'Dine begivenheder', begivenheds_path(:id => @bruger_id, :ven_id => @bruger_id) %></li>
+                              <li><#%= link_to 'Venner', bruger_path(:id => @bruger_id) %></li>
+                              <li><#%= link_to "ny begivenhed", new_begivenhed_path(:id => @bruger_id) %></li>
+                      -->
+                    <li><%= link_to "log ud", :controller => "pages", :action => "logud" %></li>
+                  </ul>
+                  <ul class="nav secondary-nav">
+                    <form action="" class="pull-left">
+                        <input type="text" placeholder="Search">
+                    </form>
+                  </ul>
+                </div>
+              </div><!-- /topbar-inner -->
+            </div><!-- /topbar -->
+        </div>
+        <%= yield %>
+
+    </body>
 </html>
