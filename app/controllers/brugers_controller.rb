@@ -25,6 +25,7 @@ class BrugersController < ApplicationController
     @all_begivenheds = Begivenhed.all
     @begivenheds = @bruger.begivenheds
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bruger }
