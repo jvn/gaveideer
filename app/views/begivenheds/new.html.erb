@@ -1,5 +1,4 @@
 <h1>New begivenhed</h1>
-<% @begivenhed.bruger = @bruger %>
 <%= form_for(@begivenhed) do |f| %>
   <% if @begivenhed.errors.any? %>
     <div id="error_explanation">
@@ -13,10 +12,7 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :bruger_id %><br />
-    <%= f.number_field :bruger_id %>
-  </div>
+
   <div class="field">
     <%= f.label :begivenhed %><br />
     <%= f.text_field :begivenhed %>
@@ -31,4 +27,4 @@
 <% end %>
 
 
-<%= link_to 'Back', @bruger %>
+<%= link_to 'Back', @bruger_path %>

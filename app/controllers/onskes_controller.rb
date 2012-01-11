@@ -30,6 +30,8 @@ class OnskesController < ApplicationController
   # GET /onskes/new
   # GET /onskes/new.json
   def new
+    @bruger_id = current_user.id
+    @bruger = Bruger.find_by_id(@bruger_id)
     @onske = Onske.new
 
     respond_to do |format|

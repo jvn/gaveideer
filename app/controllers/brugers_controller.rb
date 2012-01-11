@@ -7,7 +7,6 @@ class BrugersController < ApplicationController
     @brugers = Bruger.all
 
     #@brugerSaaJoelKanSeDetVirker = current_user
-    logger.info("nuv. bruger: " + current_user)
 
     respond_to do |format|
       format.html # index.html.erb

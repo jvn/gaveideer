@@ -9,7 +9,7 @@
     <% @brugers.each do |bruger| %>
         <% if bruger.id.to_i != @bruger_id.to_i %>
             <tr>
-                <td><%= link_to bruger.navn, begivenheds_path(:id => @bruger_id, :ven_id => bruger.id) %></td>
+                <td><%= link_to bruger.navn, begivenheds_path(:ven_id => bruger.id) %></td>
                 <td><%= bruger.efternavn %></td>
             </tr>
         <% end %>
