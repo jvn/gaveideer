@@ -22,19 +22,22 @@
             <th>Begivenhed</th>
           </tr>
 
-        <% @all_begivenheds.each do |begivenhed| %>
-            <% @anden_bruger = Bruger.find(begivenhed.bruger_id) %>
+          <% @all_begivenheds.each do |begivenhed| %>
+              <% if begivenhed.bruger_id != @bruger_id  %>
+                    <tr>
+                     <td><%= link_to begivenhed.begivenhed, edit_begivenhed_path(begivenhed) %></td>
+                    </tr>
+              <% end %>
 
-            <% if begivenhed.bruger_id != @bruger_id  %>
+
+          <% end %>
+            <%# if begivenhed.bruger_id != @bruger_id  %>
                <tr>
-                <td><%= @anden_bruger.navn %> </td>
-                <td><%= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
+                <td><%#= link_to begivenhed.begivenhed, onskes_path(:ven_id => begivenhed.bruger_id,
                                                                    :beg_id => begivenhed.id) %></td>
                </tr>
-           <% end %>
-        <% end %>
         </table>
-    <%= link_to 'venner', brugers_path(:id => @bruger.id)  %>
+    <!-- <%# link_to 'venner', brugers_path(:id => @bruger.id)  %> -->
     </div>
-</div>
+   </div>
 

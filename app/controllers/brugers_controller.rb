@@ -18,6 +18,7 @@ class BrugersController < ApplicationController
   # GET /brugers/1
   # GET /brugers/1.json
   def show
+    logger.info ("aktuel bruger" + params[:id])
     set_user(params[:id])
     @bruger = Bruger.find(params[:id])
     @bruger_id = current_user
@@ -77,6 +78,7 @@ class BrugersController < ApplicationController
       end
     end
   end
+
 
   # DELETE /brugers/1
   # DELETE /brugers/1.json

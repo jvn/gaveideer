@@ -99,4 +99,3 @@ Onske.create(:onske => 'klaver',
 Onske.create(:onske => 'hundehvalp',
              :pris => 10.00,
              :begivenhed => @begivenhed7)
-

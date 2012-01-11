@@ -8,7 +8,8 @@ gem 'rails', '3.1.0'
 gem 'sqlite3'
 gem 'factory_girl_rails'
 gem 'forgery', '0.3.12'
-
+gem 'omniauth-twitter'
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Gems used only for assets and not required
 # in production environments by default.
