@@ -14,6 +14,7 @@ class BrugersController < ApplicationController
   # GET /brugers/1
   # GET /brugers/1.json
   def show
+    logger.info ("aktuel bruger" + params[:id])
     @bruger = Bruger.find(params[:id])
     @bruger_id = @bruger.id
     @all_begivenheds = Begivenhed.all
@@ -72,6 +73,7 @@ class BrugersController < ApplicationController
       end
     end
   end
+
 
   # DELETE /brugers/1
   # DELETE /brugers/1.json

@@ -1,5 +1,39 @@
-<h1>New sexy User</h1>
+<h1>New Sexy User</h1>
 
-<%= render 'form' %>
+<%= form_for(@bruger) do |f| %>
+    <% if @bruger.errors.any? %>
+        <div class="error message">
+          <h2> Invalid shit </h2>
+          <ul>
+            <% for message in @bruger.errors.full_messages %>
+            <li><%= message %> </li>
+                <%end %>
+          </ul>
+         </div>
+       <% end %>
+
+      <div class="field">
+    <%= f.label :navn %><br />
+    <%= f.text_field :navn %>
+  </div>
+  <div class="field">
+    <%= f.label :efternavn %><br />
+    <%= f.text_field :efternavn %>
+  </div>
+    <div class = "field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class = "field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+    <div class = "field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+       <p class="button"><%= f.submit %> </p>
+    <% end %>
+
 
 <%= link_to 'Back', brugers_path %>

@@ -19,5 +19,3 @@ require 'forgery'
 @begivenhed6 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger3)
 @begivenhed7 = Begivenhed.create(:begivenhed => 'min foedselsdag', :dato => 'd.01/01/2012', :bruger => @bruger3)
 
-Onske.create(:Onske => 'ps3', :pris => 10.00, :)
-
