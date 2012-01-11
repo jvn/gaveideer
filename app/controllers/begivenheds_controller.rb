@@ -3,11 +3,11 @@ class BegivenhedsController < ApplicationController
   # GET /begivenheds.json
   def index
     @begivenheds = Begivenhed.all
-    @bruger_id = current_user
+    @bruger_id = current_user.id
     @ven_id = params[:ven_id]
     @ven = Bruger.find_by_id(@ven_id)
     @ven_begivenheds = @ven.begivenheds
-    @bruger = Bruger.find_by_id(current_user)
+    @bruger = Bruger.find_by_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +19,7 @@ class BegivenhedsController < ApplicationController
   # GET /begivenheds/1.json
   def show
     @begivenhed = Begivenhed.find(params[:id])
-    @bruger = Bruger.find_by_id(current_user)
+    @bruger = Bruger.find_by_id(current_user.id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,7 +30,7 @@ class BegivenhedsController < ApplicationController
   # GET /begivenheds/new
   # GET /begivenheds/new.json
   def new
-    @bruger_id = current_user
+    @bruger_id = current_user.id
     @bruger = Bruger.find_by_id(@bruger_id)
     @begivenhed = Begivenhed.new
 
@@ -63,7 +63,7 @@ class BegivenhedsController < ApplicationController
   # PUT /begivenheds/1
   # PUT /begivenheds/1.json
   def update
-    @bruger = Bruger.find_by_id(current_user)
+    @bruger = Bruger.find_by_id(current_user.id)
     @begivenhed = Begivenhed.find(params[:id])
 
     respond_to do |format|
@@ -80,7 +80,7 @@ class BegivenhedsController < ApplicationController
   # DELETE /begivenheds/1
   # DELETE /begivenheds/1.json
   def destroy
-    @bruger = Bruger.find_by_id(current_user)
+    @bruger = Bruger.find_by_id(current_user.id)
     @begivenhed = Begivenhed.find(params[:id])
     @begivenhed.destroy
 
