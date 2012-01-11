@@ -1,4 +1,6 @@
 class Bruger < ActiveRecord::Base
+  has_many :begivenheds
+
   attr_accessor :password
   before_save :encrypt_password
 
@@ -13,5 +15,13 @@ class Bruger < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
-  has_many :begivenheds
+
+  def self.authenticate(email, password)
+    user = find_by_email(email)
+    if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+      user
+    else
+      nil
+    end
+  end
 end

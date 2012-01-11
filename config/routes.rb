@@ -1,5 +1,7 @@
 Gaveideer::Application.routes.draw do
-  root :to => "pages#forside"
+  get "loGinz" => "sessions#new", :as => "loGinz"
+
+  root :to => "sessions#new"
 
   match "logud" => "pages#logud"
 
@@ -9,4 +11,5 @@ Gaveideer::Application.routes.draw do
 
   resources :brugers
 
+  resources :sessions
 end
